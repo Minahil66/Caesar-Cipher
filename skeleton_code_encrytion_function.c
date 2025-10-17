@@ -69,7 +69,7 @@ void encrypt(char message[], int key){
             message[i]=new_status+'a';
         }
         }
-        printf("%s", message);
+        printf("The encrypted message is: %s", message);
         }
     //bruteforce function definition is here:
     void bruteforce(char message[]){
