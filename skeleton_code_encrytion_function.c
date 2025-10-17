@@ -93,3 +93,4 @@ void encrypt(char message[], int key){
         printf("\n");
         }
         }
+
