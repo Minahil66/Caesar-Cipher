@@ -1,6 +1,7 @@
 //skeleton code aka foundation
 #include<stdio.h>
 #include<string.h>
+#include<conio.h>
 void encrypt(char message[], int key); //encryption function declaration
 void bruteforce(char message[]);//bruteforce function is here;
 //decrypt function will be declared here;
@@ -14,17 +15,19 @@ int main() {
     printf("+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=\n\n");
     printf("1. Encryption\n2. Decryption\n3. Brute force\nEnter your choice: ");
     scanf("%d", &part);
+    while(getchar()!='\n');
+
     //put switch here
     switch(part){
         case(1):{
     //encrytion function calling
-    printf("\nxxx NOTE: TYPE IN A MESSAGE WITHOUT ANY SPACES xxx");
-    printf("\nEnter the message that you want to encrypt:");
-    scanf("%s", text);
+    printf("\nEnter a message to encrypt:");
+    fgets(text,500,stdin);
+    text[strcspn(text, "\n")]=0;
     printf("\nEnter the secret key: ");
     scanf("%d", &s_key);
     encrypt(text, s_key);
-    return 0;
+    break;
     }
         case(2): {
             //decrytion function calling
@@ -32,11 +35,11 @@ int main() {
     }
         case(3):{
             //bruteforce fucntion calling
-    printf("\nxxx NOTE: TYPE IN A MESSAGE WITHOUT ANY SPACES xxx");
-    printf("\nEnter the message that you want all possible 26 encryptions for:");
-    scanf("%s", text);
+    printf("\nEnter a message to generate all possible encryptions for:");
+    fgets(text,500,stdin);
+    text[strcspn(text, "\n")]=0;
     bruteforce(text);
-    return 0;
+    break;
         }
     default: {
         printf("Invalid selection");
@@ -93,4 +96,3 @@ void encrypt(char message[], int key){
         printf("\n");
         }
         }
-
