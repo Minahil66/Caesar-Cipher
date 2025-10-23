@@ -4,7 +4,7 @@
 #include<conio.h>
 void encrypt(char message[], int key); //encryption function declaration
 void bruteforce(char message[]);//bruteforce function is here;
-//decrypt function will be declared here;
+void decrypt(char message[], int key); //decryption function declaration
 
 int main() {
     char text[500]="";
@@ -31,6 +31,13 @@ int main() {
     }
         case(2): {
             //decrytion function calling
+ printf("\nEnter a message to decrypt:");
+ fgets(text,500,stdin);
+ text[strcspn(text, "\n")]=0;
+ printf("\nEnter the secret key: ");
+ scanf("%d", &s_key);
+ decrypt(text, s_key);
+ break; 
     
     }
         case(3):{
@@ -48,8 +55,27 @@ int main() {
     }
     }
 //decrypt function definition starts here;
-//{
-//}
+
+void decrypt(char message[], int key){
+    int length=strlen(message);
+    int status, new_status;
+    int i;
+    for(i=0;i<length;i++){
+        char ch=message[i];
+        if(ch>='A' && ch<='Z'){
+            status=ch-'A';
+            new_status=(status - key + 26) % 26;
+            message[i]=new_status+'A';
+        }
+        else if(ch>='a' && ch<='z'){
+            status=ch-'a';
+            new_status=(status - key + 26) % 26;
+            message[i]=new_status+'a';
+        }
+    }
+    printf("The decrypted message is: %s", message);
+}
+
 
 //encrytion function definition is here:
 void encrypt(char message[], int key){
@@ -95,4 +121,5 @@ void encrypt(char message[], int key){
         printf("%s", temp_copy);
         printf("\n");
         }
+
         }
