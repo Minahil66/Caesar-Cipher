@@ -11,7 +11,7 @@ int main() {
     int s_key;
     int part; //switch variable
     printf("+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=\n\n");
-    printf(" CAESAR CIPHER ENCRYPTION TOOL\n\n");
+    printf(" CAESAR CIPHER TOOL\n\n");
     printf("+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=\n\n");
     printf("1. Encryption\n2. Decryption\n3. Brute force\nEnter your choice: ");
     scanf("%d", &part);
@@ -123,3 +123,4 @@ void encrypt(char message[], int key){
         }
 
         }
+
