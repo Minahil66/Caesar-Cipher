@@ -38,7 +38,7 @@ int main() {
     
     }
         case(3):{
-    printf("\nEnter a message to generate all possible encryptions for:");
+    printf("\nEnter a message to generate all possible decryptions for:");
     fgets(text,500,stdin);
     text[strcspn(text, "\n")]=0;
     bruteforce(text);
@@ -101,12 +101,12 @@ int main() {
     char ch=temp_copy[i];
     if(ch>='A' && ch<='Z'){
      status=ch-'A';
-    new_status=(status+j)%26;
+    new_status=(status-j+26)%26;
     temp_copy[i]=new_status+'A';
     }
     else if(ch>='a' && ch<='z'){
     status=ch-'a';
-     new_status=(status+j)%26;
+     new_status=(status-j+26)%26;
      temp_copy[i]=new_status+'a';
     }
     }
@@ -114,5 +114,6 @@ int main() {
     printf("\n");
     }
     }
+
 
 
