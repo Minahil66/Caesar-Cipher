@@ -37,7 +37,6 @@ int main() {
     scanf("%d", &s_key);
     decrypt(text, s_key);
     break; 
-    
     }
         case(3):{
     //bruteforce fucntion calling
@@ -46,80 +45,75 @@ int main() {
     text[strcspn(text, "\n")]=0;
     bruteforce(text);
     break;
-        }
+     }
     default: {
         printf("Invalid selection");
     }
-
     }
     }
-    
     //decrypt function definition starts here;
     void decrypt(char message[], int key){
     int length=strlen(message);
     int status, new_status;
     int i;
     for(i=0;i<length;i++){
-        char ch=message[i];
-        if(ch>='A' && ch<='Z'){
-            status=ch-'A';
-            new_status=(status - key + 26) % 26;
-            message[i]=new_status+'A';
-        }
-        else if(ch>='a' && ch<='z'){
-            status=ch-'a';
-            new_status=(status - key + 26) % 26;
-            message[i]=new_status+'a';
-        }
+    char ch=message[i];
+    if(ch>='A' && ch<='Z'){
+     status=ch-'A';
+    new_status=(status - key + 26) % 26;
+    message[i]=new_status+'A';
+    }
+    else if(ch>='a' && ch<='z'){
+    status=ch-'a';
+    new_status=(status - key + 26) % 26;
+    message[i]=new_status+'a';
+    }
     }
     printf("\nThe decrypted message is: %s", message);
     }
-
-
     //encrytion function definition is here:
     void encrypt(char message[], int key){
     int length=strlen(message);
     int status, new_status;
     int i;
     for(i=0;i<length;i++){
-            char ch=message[i];
-        if(ch>='A' && ch<='Z'){
-            status=ch-'A';
-            new_status=(status+key)%26;
-            message[i]=new_status+'A';
-        }
-        else if(ch>='a' && ch<='z'){
-            status=ch-'a';
-            new_status=(status+key)%26;
-            message[i]=new_status+'a';
-        }
-        }
-        printf("\nThe encrypted message is: %s", message);
-        }
+    char ch=message[i];
+     if(ch>='A' && ch<='Z'){
+    status=ch-'A';
+    new_status=(status+key)%26;
+    message[i]=new_status+'A';
+    }
+    else if(ch>='a' && ch<='z'){
+    status=ch-'a';
+    new_status=(status+key)%26;
+    message[i]=new_status+'a';
+    }
+    }
+    printf("\nThe encrypted message is: %s", message);
+    }
     //bruteforce function definition is here:
     void bruteforce(char message[]){
-         int length=strlen(message);
-         int status, new_status;
-         int i;
-         char temp_copy[500]; 
-        for(int j=1;j<=25;j++){ //for all possible 25 combinations
-             strcpy(temp_copy, message);
-            for(i=0;i<length;i++){
-            char ch=temp_copy[i];
-        if(ch>='A' && ch<='Z'){
-            status=ch-'A';
-            new_status=(status+j)%26;
-            temp_copy[i]=new_status+'A';
-        }
-        else if(ch>='a' && ch<='z'){
-            status=ch-'a';
-            new_status=(status+j)%26;
-            temp_copy[i]=new_status+'a';
-        }
-        }
-        printf("%s", temp_copy);
-        printf("\n");
-        }
+    int length=strlen(message);
+    int status, new_status;
+    int i;
+    char temp_copy[500]; 
+    for(int j=1;j<=25;j++){ //for all possible 25 combinations
+    strcpy(temp_copy, message);
+    for(i=0;i<length;i++){
+    char ch=temp_copy[i];
+    if(ch>='A' && ch<='Z'){
+    status=ch-'A';
+    new_status=(status+j)%26;
+    temp_copy[i]=new_status+'A';
+    }
+    else if(ch>='a' && ch<='z'){
+    status=ch-'a';
+    new_status=(status+j)%26;
+    temp_copy[i]=new_status+'a';
+    }
+    }
+    printf("%s", temp_copy);
+    printf("\n");
+    }
+    }
 
-
-        }
