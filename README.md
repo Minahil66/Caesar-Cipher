@@ -17,4 +17,4 @@ It can also display all possible decryptions.
 Watch our presentation here: [👉 Click to Watch on YouTube](https://youtu.be/5GIYGTDcJyo?si=TF4yeppWX8FRAdHY)
 
 
-*Developed by: Laiba - Manahil - Areeba*✨
+*Developed by: Laiba - Minahil - Areeba*✨
