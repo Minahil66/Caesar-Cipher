@@ -69,7 +69,6 @@ int main() {
     }
     printf("The decrypted message is: %s", message);
     }
-
     void encrypt(char message[], int key){
     int length=strlen(message);
     int status, new_status;
@@ -89,7 +88,6 @@ int main() {
     }
     printf("The encrypted message is: %s", message);
     }
-    
     void bruteforce(char message[]){
     int length=strlen(message);
     int status, new_status;
@@ -110,12 +108,9 @@ int main() {
      temp_copy[i]=new_status+'a';
     }
     }
-    printf("%s", temp_copy);
+    printf("key: %d decrypted message: %s",j, temp_copy);
     printf("\n");
     }
     }
-
-
-
 
 
