@@ -15,7 +15,7 @@ int main() {
     printf("+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=\n\n");
     printf("1. Encryption\n2. Decryption\n3. Brute force\nEnter your choice: ");
     scanf("%d", &part);
-    while(getchar()!='\n');
+    getchar();
 
     switch(part){
         case(1):{
@@ -114,6 +114,7 @@ int main() {
     printf("\n");
     }
     }
+
 
 
 
