@@ -13,8 +13,4 @@ It can also display all possible decryptions.
 - Modular code structure
 - Includes presentation and documentation (proposal, report, slides)
 
-## 🎥 Presentation Video
-Watch our presentation here: [👉 Click to Watch on YouTube](https://youtu.be/5GIYGTDcJyo?si=TF4yeppWX8FRAdHY)
-
-
 *Developed by: Laiba - Minahil - Areeba*✨
